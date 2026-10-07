@@ -183,3 +183,27 @@ D:\kafka_2.13-3.9.0\bin\windows>kafka-topics.bat --list --bootstrap-server local
 telusko
 ```
 Each partition has a **Leader** (the broker handling reads/writes for that partition) and **Replicas** (the brokers holding a copy). **Isr** (In-Sync Replicas) are the replicas currently fully caught up with the leader.
+
+---
+
+## Listing & Deleting Topics and Consumer Groups
+
+To list all topics:
+```bash
+kafka-topics.bat --bootstrap-server localhost:9092 --list
+```
+
+To list all consumer groups:
+```bash
+kafka-consumer-groups.bat --bootstrap-server localhost:9092 --list
+```
+
+To delete a topic:
+```bash
+kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic [topic-name]
+```
+
+To delete a consumer group:
+```bash
+kafka-consumer-groups.bat --bootstrap-server localhost:9092 --delete --group [group-name]
+```
